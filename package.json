@@ -1,0 +1,32 @@
+{
+  "name": "mongoscraper",
+  "version": "1.0.0",
+  "description": "NPM Packages For MongoScraper Homework",
+  "main": "app.js",
+  "scripts": {
+    "test": "testme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walshcam/MongoScraper.git"
+  },
+  "keywords": [
+    "mongodb",
+    "mvc"
+  ],
+  "author": "Cameron Walsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walshcam/MongoScraper/issues"
+  },
+  "homepage": "https://github.com/walshcam/MongoScraper#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.1.1",
+    "morgan": "^1.9.0",
+    "request": "^2.86.0"
+  }
+}
