@@ -33,6 +33,10 @@ module.exports = function(app) {
                     return res.json(err);
                 });
             });
+
+            
+            // If we were able to successfully scrape and save an Article, send a message to the client
+            res.send("Scrape Complete");
         });
     });
 }
