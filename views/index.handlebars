@@ -18,8 +18,9 @@
 {{!-- Jumbotron --}}
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <h1 class="display-4">The Takeout Scraper</h1>
+    <p class="lead">For those who prefer their food news scraped, not burnt</p>
+    <button id = "new-scrape" class = "btn btn-primary">Scrape Now!</button>
   </div>
 </div>
 
@@ -27,7 +28,7 @@
 <div class = "container">
 
         {{!-- Individual Card Example --}}
-    <div class="card">
+    <div class="card mb-2">
         <h5 class="card-header">Featured</h5>
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
@@ -37,7 +38,7 @@
     </div>
 
         {{!-- Individual Card Example --}}
-    <div class="card">
+    <div class="card mb-2">
         <h5 class="card-header">Featured</h5>
         <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
@@ -45,5 +46,9 @@
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
+
+    {{#each articles}}
+      {{> articles-block }}
+    {{/each}}
 
 </div>
