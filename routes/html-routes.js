@@ -9,7 +9,11 @@ module.exports = function(app) {
     db.Article.find({})
       .then(function(dbArticle) {
         // If we were able to successfully find Articles, send them back to the client
-        res.render("index", dbArticle);
+        let handlebarsObject = {
+          articles: dbArticle
+        };
+        // console.log("handlebarsObject: " + JSON.stringify(handlebarsObject));
+        res.render("index", handlebarsObject);
       })
       .catch(function(err) {
         // If an error occurred, send it to the client

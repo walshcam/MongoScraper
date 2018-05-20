@@ -4,19 +4,14 @@ var mongoose = require("mongoose");
 
 module.exports = function(app) {
     
-    // Route for getting all Articles from the db
-    app.get("/articles", function(req, res) {
-        // Grab every document in the Articles collection
-        db.Article.find({})
+    app.get("/delete/:id", function(req, res) {
+        //Remove an article using the objectID
+        db.Article.findByIdAndRemove(req.params.id)
         .then(function(dbArticle) {
-            // If we were able to successfully find Articles, send them back to the client
-            // res.json(dbArticle);
-            console.log(dbArticle);
-            res.render("index", dbArticle);
+            res.json(dbArticle);
         })
         .catch(function(err) {
-            // If an error occurred, send it to the client
             res.json(err);
-        });
-    });
+        })
+    })
 }
