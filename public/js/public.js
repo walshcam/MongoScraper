@@ -26,4 +26,10 @@ $(".delete-article").on("click", function(event){
 })
 
 //Add A Note
-$(".")
+$(".add-note").on("click", function(event){
+    let id = $(this).data("id");
+    let newNote = $(this).siblings("textarea").val();
+    let looking = $(this).parent()
+    console.log("ID: " + id + " New Note: " + newNote + " Looking! " + JSON.stringify(looking));
+})
+
