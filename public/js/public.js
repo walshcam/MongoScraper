@@ -1,11 +1,15 @@
 $("#new-scrape").on("click", newScrape);
 
+//update the scrape - AJAX call is needed for location.reload() to work
 function newScrape() {
-    $.get("/scrape")
-    .then(
-        $.get("/")
-    )}
+    $.ajax("/scrape", {
+        type: "GET"
+    }).then(function(){
+        location.reload();
+    });
+}
 
+//Delete an article
 $(".delete-article").on("click", function(event){
     let id = $(this).data("id");
     let selected = $(this).parent().parent();
@@ -19,6 +23,7 @@ $(".delete-article").on("click", function(event){
             selected.remove();
         }
     })
-
-    //send the add note 
 })
+
+//Add A Note
+$(".")

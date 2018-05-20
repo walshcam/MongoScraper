@@ -4,7 +4,19 @@
         <div class="card-body">
             <h5 class="card-title" data-id = "{{_id}}"><a href = "{{link}}">{{heading}}</a></h5>
             <p class="card-text">{{paragraph}}</p>
-            <a class="btn btn-primary text-white add-note" data-id = "{{this._id}}">Notes</a>
             <a class="btn btn-danger text-white delete-article" data-id = "{{this._id}}">Delete</a>
         </div>
+        <div class = "card-footer" data-id="{{_id}}">
+            {{#each notes}}
+                {{> notes-block }}
+            {{/each}}
+            <form>
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control mb-2" rows="3" id="comment"></textarea>
+                    <button class="btn btn-primary text-white add-note" type = "submit">Add Note</button>
+                </div>
+            </form>
+        </div>
     </div>
+
