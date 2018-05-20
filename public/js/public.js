@@ -29,7 +29,18 @@ $(".delete-article").on("click", function(event){
 $(".add-note").on("click", function(event){
     let id = $(this).data("id");
     let newNote = $(this).siblings("textarea").val();
-    let looking = $(this).parent()
-    console.log("ID: " + id + " New Note: " + newNote + " Looking! " + JSON.stringify(looking));
+    console.log("ID: " + id + " Note: " + newNote);
+    //Run a POST method to pass the note to the backend
+
+    $.ajax({
+        method: "POST",
+        url: "/articles/" + id,
+        data: {
+            body: newNote
+        }
+    }).then(function(data) {
+        console.log(JSON.stringify(data));
+        $(this).siblings("textarea").empty();
+    })
 })
 
