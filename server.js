@@ -40,7 +40,7 @@ require("./routes/notes-routes.js")(app);
 require("./routes/scraper-routes.js")(app);
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://ds127034.mlab.com:27034/heroku_knmb2797");
+mongoose.connect("mongodb://<dbuser>:<dbpassword>@ds127034.mlab.com:27034/heroku_knmb2797");
 
 // Start the server
 app.listen(PORT, function() {
