@@ -2,7 +2,7 @@
   "name": "mongoscraper",
   "version": "1.0.0",
   "description": "NPM Packages For MongoScraper Homework",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "testme"
   },
