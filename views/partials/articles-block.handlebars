@@ -7,14 +7,17 @@
             <a class="btn btn-danger text-white delete-article" data-id = "{{this._id}}">Delete</a>
         </div>
         <div class = "card-footer" data-id="{{_id}}">
-            {{#each notes}}
-                {{> notes-block }}
+            
+            {{#each note}}
+                <p class="card-text">{{body}}</p>
             {{/each}}
+
             <form>
                 <div class="form-group">
                     <label for="comment">Comment:</label>
                     <textarea class="form-control mb-2" rows="3" id="comment"></textarea>
                     <button class="btn btn-primary text-white add-note" type = "submit" data-id = "{{this._id}}">Add Note</button>
+                    <button class="btn btn-secondary text-white get-note" data-id = "{{this._id}}">See Current Notes</button>
                 </div>
             </form>
         </div>

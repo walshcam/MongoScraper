@@ -23,6 +23,13 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Use morgan logger for logging requests
+app.use(logger("dev"));
+// Use body-parser for handling form submissions
+app.use(bodyParser.urlencoded({ extended: true }));
+// Use express.static to serve the public folder as a static directory
+app.use(express.static("public"));
+
 // Configure middleware
 
 // Routes
@@ -31,13 +38,6 @@ require("./routes/html-routes.js")(app);
 require("./routes/author-routes.js")(app);
 require("./routes/notes-routes.js")(app);
 require("./routes/scraper-routes.js")(app);
-
-// Use morgan logger for logging requests
-app.use(logger("dev"));
-// Use body-parser for handling form submissions
-app.use(bodyParser.urlencoded({ extended: true }));
-// Use express.static to serve the public folder as a static directory
-app.use(express.static("public"));
 
 // Connect to the Mongo DB
 mongoose.connect("mongodb://localhost/week18Populater");

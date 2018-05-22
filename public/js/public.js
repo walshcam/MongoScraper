@@ -40,7 +40,23 @@ $(".add-note").on("click", function(event){
         }
     }).then(function(data) {
         console.log(JSON.stringify(data));
-        $(this).siblings("textarea").empty();
     })
+    // Empties Input Field
+    $(this).siblings("textarea").val("");
 })
 
+//See Current Notes
+$(".get-note").on("click", function(event){
+    let id = $(this).data("id");
+
+    console.log("ID: " + id)
+    //Run a POST method to pass the note to the backend
+
+    $.ajax({
+        method: "GET",
+        url: "/articles/" + id
+
+    }).then(function(data) {
+        console.log(JSON.stringify(data));
+    })
+})

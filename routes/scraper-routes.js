@@ -1,4 +1,3 @@
-let path = require("path");
 let db = require("../models");
 let axios = require("axios");
 let cheerio = require("cheerio");
